@@ -21,6 +21,7 @@ local soundTable = {
 
 
 
+
 local options = {
 	type = "group",
 	name = L["AutoLogoutAlert Options"],
