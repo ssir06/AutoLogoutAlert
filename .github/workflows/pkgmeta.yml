@@ -1,17 +1,12 @@
 name: release
 
 on: [push]
+package-as: AutoLogoutAlert
+enable-nolib-creation: no
+ignore: # Files and directories beginning with a dot (such as .git) are automatically ignored, as is the pgkmeta file itself.
 
-jobs:
-  build:
+required-dependencies:
 
-    runs-on: ubuntu-latest
+manual-changelog: CHANGELOG.txt
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+license-output: LICENSE.txt
