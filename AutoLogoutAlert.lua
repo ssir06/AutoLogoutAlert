@@ -19,15 +19,19 @@ local defaults = {
 }
 
 -- list of sounds 
+local soundPath = "Interface\\AddOns\\AutoLogoutAlert\\sounds\\"
+
 local soundTable = {
-  ["Default"] = "Interface\\AddOns\\AutoLogoutAlert\\AutoLogoutAlert.mp3",
-  ["Woop"] = "Interface\\AddOns\\AutoLogoutAlert\\sounds\\0451.ogg",  
-  ["Bell"] = "Interface\\AddOns\\AutoLogoutAlert\\sounds\\Bell.ogg",
-  ["Chime"] = "Interface\\AddOns\\AutoLogoutAlert\\sounds\\Chime.ogg",
-  ["Kachink"] = "Interface\\AddOns\\AutoLogoutAlert\\sounds\\Kachink.ogg",
-  ["Link"] = "Interface\\AddOns\\AutoLogoutAlert\\sounds\\Link.ogg",
-  ["Xylo"] = "Interface\\AddOns\\AutoLogoutAlert\\sounds\\Xylo.ogg"  
+  ["Default"] = "AutoLogoutAlert.mp3",
+  ["Woop"] = "0451.ogg",  
+  ["Bell"] = "Bell.ogg",
+  ["Chime"] = "Chime.ogg",
+  ["Kachink"] = "Kachink.ogg",
+  ["Link"] = "Link.ogg",
+  ["Xylo"] = "Xylo.ogg"  
 }
+
+local media = LibStub("LibSharedMedia-3.0")
 
 --------------------------
 -- Blizard Options Panel
@@ -59,7 +63,7 @@ local options = {
 			--dialogControl = "LSM30_Statusbar",
 			set = function(info,val) 
 				AutoLogoutAlert.db.profile.soundFile = val				
-				PlaySoundFile(soundTable[val],  "Master");
+				PlaySoundFile(soundPath..soundTable[val],  "Master");
 			end	,
 			get = function(info) return AutoLogoutAlert.db.profile.soundFile end
 		}	
@@ -122,7 +126,7 @@ function AutoLogoutAlert:CHAT_MSG_SYSTEM(Arg1, Arg2)
 	if (Arg1) then        
 		if (Arg1 == IDLE_MESSAGE) then
 			if (AutoLogoutAlert.db.profile.enabled) then 
-				PlaySoundFile(soundTable[AutoLogoutAlert.db.profile.soundFile],  "Master");
+				PlaySoundFile(soundPath..soundTable[AutoLogoutAlert.db.profile.soundFile],  "Master");
 			end;
 			--PlaySoundFile("Interface\\AddOns\\AutoLogoutAlert\\AutoLogoutAlert.mp3",  "Master");
 		end;
