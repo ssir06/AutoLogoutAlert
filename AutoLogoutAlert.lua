@@ -40,33 +40,47 @@ local options = {
 	type = "group",
 	name = L["AutoLogoutAlert Options"],
 	args = {
-		enabled = {
+		everydesc = {
 			order = 0,
-			type = "toggle",
-			name = L["Enable Alerte"],
-			desc = L["Activate sound alerte"],
-			set = function(info,val) 
-				AutoLogoutAlert.db.profile.enabled = val 
-			end,
-			get = function(info) 
-				return AutoLogoutAlert.db.profile.enabled 
-			end
-		 
+			type = "description",
+			fontSize = "medium",
+			name = L["General options configuration of AutoLogoutAlert"]
 		},
-	
-		soundFile = {
-			order = 1,
-			type = "select",
-			name = L["Sound Alerte"],
-			desc = L["Sound Alerte"],
-			values = soundTable,
-			--dialogControl = "LSM30_Statusbar",
-			set = function(info,val) 
-				AutoLogoutAlert.db.profile.soundFile = val				
-				PlaySoundFile(soundPath..soundTable[val],  "Master");
-			end	,
-			get = function(info) return AutoLogoutAlert.db.profile.soundFile end
-		}	
+		Geneal = {
+			type = "group",
+			name = L["General"],
+			inline = true,
+			args = {
+
+				enabled = {
+					order = 0,
+					type = "toggle",
+					name = L["Enable Alerte"],
+					desc = L["Activate sound alerte"],
+					set = function(info,val) 
+						AutoLogoutAlert.db.profile.enabled = val 
+					end,
+					get = function(info) 
+						return AutoLogoutAlert.db.profile.enabled 
+					end
+				
+				},
+			
+				soundFile = {
+					order = 1,
+					type = "select",
+					name = L["Sound Alerte"],
+					desc = L["Select sound to play"],
+					values = soundTable,
+					--dialogControl = "LSM30_Statusbar",
+					set = function(info,val) 
+						AutoLogoutAlert.db.profile.soundFile = val				
+						PlaySoundFile(soundPath..soundTable[val],  "Master");
+					end	,
+					get = function(info) return AutoLogoutAlert.db.profile.soundFile end
+				}	
+			}
+		}
 	}
 }
   

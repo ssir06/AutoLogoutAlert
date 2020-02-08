@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Localizations",
+    "\\sounds"
   ],
-  "SelectedNode": "\\.pkgmeta",
+  "SelectedNode": "\\AutoLogoutAlert.lua",
   "PreviewInSolutionExplorer": false
 }
