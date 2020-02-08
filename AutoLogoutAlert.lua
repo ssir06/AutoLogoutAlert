@@ -60,6 +60,25 @@ local options = {
 -------------------------
 -- Initialize Events 
 -------------------------
+
+
+function AutoLogoutAlert:OnInitialize()
+	-- Called when the addon is loaded	
+	self:Initialize();
+end
+
+function AutoLogoutAlert:OnEnable()
+	-- Called when the addon is enabled
+	AutoLogoutAlert:RegisterEvent("CHAT_MSG_SYSTEM");;
+	self:Print("AutoLogoutAlert is now enabled")
+end
+
+function AutoLogoutAlert:OnDisable()
+	-- Called when the addon is disabled
+	AutoLogoutAlert:UnregisterEvent("CHAT_MSG_SYSTEM");
+	self:Print("AutoLogoutAlert is now disabled")
+end
+
 function AutoLogoutAlert:Initialize()
 
 	AutoLogoutAlert.db = LibStub("AceDB-3.0"):New("AutoLogoutAlert", defaults, true)
@@ -69,17 +88,24 @@ function AutoLogoutAlert:Initialize()
 	
 	AutoLogoutAlert:RegisterEvent("CHAT_MSG_SYSTEM");
 	AutoLogoutAlert.LoadedStatus["Initialized"] = 1;
+	AutoLogoutAlert.LoadedStatus["RunLevel"] = 3;
+
+	-- chat commands
+	AutoLogoutAlert:RegisterChatCommand({"/AutoLogoutAlert", "/aloa"}, options)
+	AutoLogoutAlert:RegisterChatCommand({"/AutoLogoutAlert", "/aloa enabled"}, "Enable" )
+	AutoLogoutAlert:RegisterChatCommand({"/AutoLogoutAlert", "/aloa disabled"}, "Disable")
+
 end;
 
 
-function AutoLogoutAlert:ADDON_LOADED(Arg1, Arg2)
+-- function AutoLogoutAlert:ADDON_LOADED(Arg1, Arg2)
 	
-	if (AutoLogoutAlert.LoadedStatus["Initialized"] == 0 and Arg1 == "AutoLogoutAlert") then		
-		-- Start initializing the addon
-		AutoLogoutAlert:Initialize();
-		AutoLogoutAlert.LoadedStatus["RunLevel"] = 3;
-    end
-end;
+-- 	if (AutoLogoutAlert.LoadedStatus["Initialized"] == 0 and Arg1 == "AutoLogoutAlert") then		
+-- 		-- Start initializing the addon
+-- 		AutoLogoutAlert:Initialize();
+-- 		AutoLogoutAlert.LoadedStatus["RunLevel"] = 3;
+--     end
+-- end;
 
 
 function AutoLogoutAlert:CHAT_MSG_SYSTEM(Arg1, Arg2)
@@ -111,7 +137,12 @@ do
 	AutoLogoutAlert.LoadedStatus["RunLevel"] = 2;
 end;
 
-
+function AutoLogoutAlert:Enable()
+	AutoLogoutAlert:RegisterEvent("CHAT_MSG_SYSTEM");;
+end 
+function AutoLogoutAlert:Disable()
+	AutoLogoutAlert:UnregisterEvent("CHAT_MSG_SYSTEM");;
+end 
 
 
 -- AutoLogoutAlert:Initialize();
@@ -120,6 +151,6 @@ end;
 -- AutoLogoutAlert:Initialize();
 --AutoLogoutAlert:SetScript("OnEvent", AutoLogoutAlert.OnEvent);
 
-AutoLogoutAlert:RegisterEvent("ADDON_LOADED");
+-- AutoLogoutAlert:RegisterEvent("ADDON_LOADED");
 -- LibStub("AceConfig-3.0"):RegisterOptionsTable("AutoLogoutAlert", options)
 -- LibStub("AceConfigDialog-3.0"):AddToBlizOptions("AutoLogoutAlert", "AutoLogoutAlert")

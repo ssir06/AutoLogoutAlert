@@ -23,6 +23,6 @@ AutoLogoutAlerte is an helper for World of Warcraft: Classic. It emit a sound al
 - list of sound to choose the sound to play before being logout from the game 
 
 # Chat commands 
-- /loa : display AutoLogoutAlerte option panel 
-- /loa enabled : enabled sound alert 
-- /loa disabled : disable sound alert 
+- /aloa : display AutoLogoutAlerte option panel 
+- /aloa enabled : enabled sound alert 
+- /aloa disabled : disable sound alert 
