@@ -3,6 +3,10 @@ package-as: AutoEventAlert
 
 ignore:
  - .pkgmeta 
+ - ProjectSettings.json
+ - slnx.sqlite
+ - VSWorkspaceState.json
+
 
 externals:
  libs/LibStub:
@@ -27,18 +31,12 @@ externals:
   url: svn://svn.wowace.com/wow/ace3/mainline/trunk/AceGUI-3.0
  libs/AceAddon-3.0:
   url: svn://svn.wowace.com/wow/ace3/mainline/trunk/AceAddon-3.0
-libs/AceHook-3.0:
+ libs/AceHook-3.0:
   url: svn://svn.wowace.com/wow/ace3/mainline/trunk/AceHook-3.0
   tag: latest
  libs/AceTimer-3.0:
   url: svn://svn.wowace.com/wow/ace3/mainline/trunk/AceTimer-3.0
-  tag: latest
- libs/LibBabble-Zone-3.0:
-  url: svn://svn.wowace.com/wow/libbabble-zone-3-0/mainline/trunk
- libs/LibAboutPanel:
-  url: git://git.curseforge.net/wow/libaboutpanel/mainline.git
- libs/LibBetterBlizzOptions:
-  url: svn://svn.wowace.com/wow/libbetterblizzoptions-1-0/mainline/trunk
+  tag: latest 
  libs/LibSharedMedia-3.0:
   url: svn://svn.wowace.com/wow/libsharedmedia-3-0/mainline/trunk
   tag: latest

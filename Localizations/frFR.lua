@@ -6,7 +6,7 @@ L["Hello world !"] = "Salut tout le monde !";
  
 
 L["General options"] = "Options generales";
-L["General options configuration of AutoLogoutAlert"]= "Configuration des options générales d'AutologourAlert"
+L["General options configuration of AutoLogoutAlert"]= "Configuration des options générales d'AutologoutAlert"
 
 L["Custom"]="Personalsé";
 L["AutoLogoutAlert Options"] ="Options AutoLogoutAlert";
