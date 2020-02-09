@@ -13,9 +13,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-   
-    - name: Create Classic Package
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v1   
+    - name: Create Classic Package    
       run: curl -s https://raw.githubusercontent.com/BigWigsMods/packager/master/release.sh | bash -s -- -g 1.13.3 -m .pkgmeta-classic
       env:
         CF_API_KEY: ${{ secrets.CF_API_KEY }}
