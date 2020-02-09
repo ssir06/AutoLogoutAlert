@@ -1,0 +1,23 @@
+## Interface: 11303
+
+## Title: AutoLogoutAlert (|cff3366ffYosh|r)
+## Notes: Sound alert when auto logout window open after being afk 
+
+## Version: @project-version@
+
+## Author: Seb
+## X-Email: ssir06 at gmail dot com
+
+## X-Category: Alert
+## X-Website: https://www.curseforge.com/wow/addons/autologoutalert/
+## X-License: All rights reserved.
+## X-Curse-Project-ID: 361114
+## X-WoWI-ID: 0
+
+## OptionalDeps: Ace3
+## X-Embeds: Ace3
+## SavedVariables: AutoLogoutAlertDB
+
+Libs\embeds.xml
+Localizations\embeds.xml
+AutoLogoutAlert.lua
