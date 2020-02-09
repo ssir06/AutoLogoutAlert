@@ -110,7 +110,7 @@ end
 
 function AutoLogoutAlert:Initialize()
 
-	AutoLogoutAlert.db = LibStub("AceDB-3.0"):New("AutoLogoutAlert", defaults, true)
+	AutoLogoutAlert.db = LibStub("AceDB-3.0"):New("AutoLogoutAlertDB", defaults, true)
  
     LibStub("AceConfig-3.0"):RegisterOptionsTable("AutoLogoutAlert", options)
     AutoLogoutAlert.optionsFrame = LibStub("AceConfigDialog-3.0"):AddToBlizOptions("AutoLogoutAlert", "AutoLogoutAlert")
