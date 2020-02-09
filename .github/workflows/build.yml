@@ -20,4 +20,9 @@ jobs:
         CF_API_KEY: ${{ secrets.CF_API_KEY }}
         GITHUB_OAUTH: ${{ secrets.GITHUB_OAUTH }}
         WOWI_API_TOKEN: ${{ secrets.WOWI_API_TOKEN }}
-
+        
+    - name: Build Package 
+      run: mvn deploy -Dregistry=https://maven.pkg.github.com/ssir06 -Dtoken=GH_TOKEN
+      env: 
+        GH_TOKEN: ${{ secrets.GITHUB_OAUTH }}
+      continue-on-error: true
