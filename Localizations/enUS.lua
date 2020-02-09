@@ -5,8 +5,9 @@ local L = LibStub("AceLocale-3.0"):NewLocale("AutoLogoutAlert", "enUS",true)
 L["Hello world !"] = true;
  
 -- Mode
+L["General"] = true;
 L["General options"] = true;
-L["General options configuration of AutoLogoutAlert"]
+L["General options configuration of AutoLogoutAlert"]=true;
 
 L["Custom"]=true;
 L["AutoLogoutAlert Options"] =true;
