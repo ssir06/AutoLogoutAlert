@@ -18,18 +18,25 @@ local defaults = {
     },
 }
 
+
 -- list of sounds 
 local soundPath = "Interface\\AddOns\\AutoLogoutAlert\\sounds\\"
 
-local soundTable = {
-  ["Default"] = "AutoLogoutAlert.mp3",
-  ["Woop"] = "0451.ogg",  
-  ["Bell"] = "Bell.ogg",
-  ["Chime"] = "Chime.ogg",
-  ["Kachink"] = "Kachink.ogg",
-  ["Link"] = "Link.ogg",
-  ["Xylo"] = "Xylo.ogg"  
-}
+ local soundTable = {
+    ["Default"] = "AutoLogoutAlert.mp3",
+    ["Woop"] = "0451.ogg",  
+    ["Bell"] = "Bell.ogg",
+    ["Chime"] = "Chime.ogg",
+    ["Kachink"] = "Kachink.ogg",
+    ["Link"] = "Link.ogg",
+	["Xylo"] = "Xylo.ogg" ,
+	["Heart"] = "Heart.ogg",
+
+	["IM"] = "IM.ogg",
+	["Info"] = "Info.ogg",
+	["Text1"] = "Text1.ogg"
+  }
+
 
 local media = LibStub("LibSharedMedia-3.0")
 
