@@ -13,6 +13,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Remove toc 
+      run : rm AutoLogoutAlert.toc
+      
+    - name: Update Toc
+      run: mv AutoLogoutAlert.tocdeploy AutoLogoutAlert.toc
+          
     - uses: actions/checkout@v1   
     - name: Create Classic Package    
       run: curl -s https://raw.githubusercontent.com/BigWigsMods/packager/master/release.sh | bash -s -- -g 1.13.3 -m .pkgmeta-classic
